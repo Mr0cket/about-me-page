@@ -10,22 +10,38 @@ ReactDOM.render(
 document.getElementById('root')
 );
 
-window.onload = function() {
-
-const mainGuy = document.querySelector(".the-main-guy");
-// let title = document.getElementById('dream-job');
+// Initialise variables
+let mainGuy = document.getElementById('the-main-guy');
 let audio = document.querySelector("#holySound");
 let audioPlaying = false; 
-
 let promise;
-let userInteraction = false;
-window.onmousedown = () => (userInteraction === false) ? userInteraction = true : null
+let userInteracted = false;
+let title = document.getElementById('dream-job');
+let titleStr = title.innerHTML;
 
-mainGuy.onmouseover = playAudio
-mainGuy.onmouseleave = () => setTimeout(pauseAudio, 300)
 
+// Declare user interaction events:
+
+// User click on the page to indicate user interaction.
+window.onmousedown = () => (userInteracted === false) ? userInteracted = true : null
+
+// Handle 2 different transitional events when user mouse hovers over element: 
+// - if user has interacted with the page:
+// - Start playing audio, transition volume = 0% to vol = 100% over transition period. 
+// - Transition to a brighter shade of background color over transition period.
+// - Reverse transition when user mouse leaves heading with faster transition period.
+
+mainGuy.onmouseover = playAudio;
+mainGuy.onmouseleave = () => setTimeout(pauseAudio, 300);
+
+
+// text change event on hovering over element
+title.onmouseover = () => title.innerHTML += " ...Well, kind of"; 
+title.onmouseleave = () => title.innerHTML = titleStr;
+
+// Declare Event handler functions
 function playAudio() {
-  if (userInteraction === true && audioPlaying === false) {
+  if (userInteracted === true && audioPlaying === false) {
     promise = audio.play();
     audioPlaying = true
     console.log('playing music');
@@ -34,8 +50,6 @@ function playAudio() {
     }
   }
 }
-
-
 function pauseAudio() {
   if(audioPlaying === true) { 
     let test = audio.pause()
@@ -48,38 +62,9 @@ function pauseAudio() {
 
 
 
+//Todo: add transitions to slightly brighten background colors from centre point
 
-
-
-}
-
-
-/* let titleStr = title.innerHTML;
-title.onmouseover = () => title.innerHTML += " ...Well, kind of";
-title.onmouseleave = () => title.innerHTML = titleStr; */
-
-
-
-  // stop: () => holySound.pause()
-  //Todo: add transitions to slightly brighten background colors from centre point
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// todo: implement unique sections on scroll velocity (scroll actions/second) > 20%? 
+//Todo: implement unique sections on scroll velocity (scroll actions/second) > 20%? 
 
 
 

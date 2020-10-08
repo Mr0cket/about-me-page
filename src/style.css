@@ -1,47 +1,73 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 .App {
-  min-height: 100vh;
-  height: 100vh;
+  height: 300vh;
+  overflow: visible;
   background-color: rgb(70, 122, 122);
-  overflow: hidden;
 }
 
 .react-logo {
   height: 15px;
   pointer-events: none;
 }
-.section-Bar {
-  position: sticky;
-  
+.section-bar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 5%;
+  top: 10%;
+  min-width: 200px;
+  width: 20%;
+  height: 300px;
 }
-.section-Bar ul li {
-  list-style-type: none;
-}
+
+
 .listless-list {
   list-style-type: none;
   font-size: 18px;
+}
+li {
+  margin: 10px;
+  padding: 10px;
+  font-family: ;
 }
 
 .main-stuff {
   text-align: center;
   height:100%;
 }
-
+.section-containers {
+  height: 110vh;
+}
+#home {
+  /* background-color: tomato; */
+}
+#work {
+  background-color: rgb(20, 209, 13);
+}
+#life {
+  background-color: rgb(233, 229, 23);
+}
 .link {
   display: inline-flexbox;
   width: 75px; 
 }
-.the-main-guy {
+.section-headings {
   font-family: 'Roboto', sans-serif;
   font-size: 20;
+  display: inline-block;
 }
 
-.based-title {
+.based-titles {
   position: relative;
   top: 30%;
 }
 
+#funky-footer {
+  position: fixed;
+  bottom: 1%;
+  left: 45%
+}
 @media (prefers-reduced-motion: no-preference) {
   .react-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -54,8 +80,12 @@
   justify-content: center;
   flex-direction: row;
   height: 20px;
-  position: sticky;
+  position: fixed;
+  left: 45%;
+  top: 0%;
 }
+
+/* default styles below */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

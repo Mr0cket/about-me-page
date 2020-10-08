@@ -6,8 +6,8 @@ function SmellyFooter() {
     
 
     return (
-        <div>
-            
+        <div id="funky-footer">
+            <p>this is the footer</p>
         </div>
     )
 }
