@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.App {
+  min-height: 100vh;
+  height: 100vh;
+  background-color: rgb(70, 122, 122);
+  overflow: hidden;
+}
+
+.react-logo {
+  height: 15px;
+  pointer-events: none;
+}
+.section-Bar {
+  position: sticky;
+  
+}
+.section-Bar ul li {
+  list-style-type: none;
+}
+.listless-list {
+  list-style-type: none;
+  font-size: 18px;
+}
+
+.main-stuff {
+  text-align: center;
+  height:100%;
+}
+
+.link {
+  display: inline-flexbox;
+  width: 75px; 
+}
+.the-main-guy {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20;
+}
+
+.based-title {
+  position: relative;
+  top: 30%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .react-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.Funky-header {
+  text-align: center;
+  display: flex;
+  align-items: space-between;
+  justify-content: center;
+  flex-direction: row;
+  height: 20px;
+  position: sticky;
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
