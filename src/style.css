@@ -29,15 +29,22 @@
 li {
   margin: 10px;
   padding: 10px;
-  font-family: ;
+  font-family: 'Roboto', sans-serif;
 }
 
 .main-stuff {
   text-align: center;
   height:100%;
+  /* Specifies that each element’s snap area should
+  align with a 100px offset from the top edge. */
+  scroll-padding: 100px 0 0;
+  /* Encourages scrolling to end at a snap position when the
+  operation completes, if it is near a snap position */
+  scroll-snap-type: y proximity;
 }
 .section-containers {
   height: 110vh;
+  scroll-snap-align: start none;
 }
 #home {
   /* background-color: tomato; */

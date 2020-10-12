@@ -21,6 +21,7 @@ function HomeSection(param) {
             <div className="based-titles">
                 <h1 id="the-main-guy" className="section-headings">Milo Silva</h1>
                 <h3 id="dream-job"> - Web Developer</h3>
+                <a className="nav">A</a>
             </div>
         </div>
     )
