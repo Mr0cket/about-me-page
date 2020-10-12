@@ -2,7 +2,7 @@ import React from 'react';
 import '../../style.css';
 
 
-function SmellyFooter() {
+function Footer() {
     
 
     return (
@@ -12,4 +12,4 @@ function SmellyFooter() {
     )
 }
 
-export default SmellyFooter;
+export default Footer;
