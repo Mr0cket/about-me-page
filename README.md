@@ -1,6 +1,11 @@
 # Milo's Profile Page
 
+// package.json scripts
+/*  */
 
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
 
 created with React, initialised with create react app (I'll initialise the next one myself, I swear!)
 
