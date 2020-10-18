@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../style.css';
+import audio from "../media/holy.wav";
 
 
 function MainStuff() {
@@ -8,8 +8,20 @@ function MainStuff() {
     return (
         <main className="main-stuff">
             <HomeSection/>
-            <WorkSection/>
-            <LifeSection/>
+            <Section 
+                name= "this is Work Section" 
+                
+                id= 'work'
+                />
+            <Section 
+                name="this is LifeSection"
+                id='life'
+                blendStyle={{
+                    background: "linear-gradient(to bottom, #164076, #f2b635)",
+                    height: "5px",
+                }}
+            />
+            
         </main>
     )
 }
@@ -17,36 +29,38 @@ function MainStuff() {
 function HomeSection(param) {
 
     return (
-        <div id="home" className="section-containers">
+        <section id="home" className="section-containers">
             <div className="based-titles">
-                <h1 id="the-main-guy" className="section-headings">Milo Silva</h1>
-                <h3 id="dream-job"> - Web Developer</h3>
-                <a className="nav">A</a>
+                <h1 id="the-main-man" className="section-headings">Milo Silva</h1>
+                    <h3 id="dream-job" className="title"> Full-Stack Developer<h5 id="addition" className="title" >...Kind of</h5></h3> 
+                    <h5 id="addition" className="title" >...Kind of.</h5>
+                <audio id="holySound">
+                    <source src={audio} type="audio/mpeg" onLoad={() => console.log('audio loaded')}/>
+                    Your browser does not support the audio element.
+                </audio>
             </div>
-        </div>
+        </section>
     )
 }
 
-function WorkSection(param) {
-    return (
-        <div id="work" className="section-containers">
-            <div>this is the div that blends sections</div>
-            <div className="based-titles">
-            <h1 className="section-headings">this is WorkSection</h1>
-            </div>
-        </div>
-    )
+class Section extends React.Component {
+    constructor(param) {
+        super();
+        this.sectionName = param.name;
+        this.blendStyle = param.blendStyle;
+        this.id = param.id;
+    }
+    render() {
+
+        return (
+            <section id={this.id} className="section-containers">
+                <div style={this.blendStyle}>this is the div that blends background colours</div>
+                <div className="based-titles">
+            <h1 className="section-headings">{this.sectionName}</h1>
+                </div>
+            </section>
+        )
+    }
 }
 
-
-function LifeSection(param) {
-    return (
-        <div id="life" className="section-containers">
-            <div className="blending div">this is the div that blends sections</div>
-            <div className="based-titles">
-            <h1 className="section-headings">this is LifeSection</h1>
-            </div>
-        </div>
-    )
-}
 export default MainStuff;

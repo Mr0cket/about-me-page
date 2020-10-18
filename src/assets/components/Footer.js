@@ -1,10 +1,8 @@
 import React from 'react';
-import '../../style.css';
 
 
-function Footer() {
+function FunkyFooter() {
     
-
     return (
         <div id="funky-footer">
             <p>this is the footer</p>
@@ -12,4 +10,4 @@ function Footer() {
     )
 }
 
-export default Footer;
+export default FunkyFooter;

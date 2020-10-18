@@ -1,36 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
-.App {
-  height: 300vh;
-  overflow: visible;
-  background-color: rgb(70, 122, 122);
+body {
+  margin: 0;
+  color: #efeeed;
 }
 
+.App {
+  height: 300vh;
+  overflow: hidden;
+  background-color: rgb(55 55 55);
+}
+
+.title {
+  display: inline;
+  font-size: 14px;
+  margin: 0;
+  text-align: left;
+  padding-left: 4px;
+}
+#addition {
+  display: none;
+}
 .react-logo {
-  height: 15px;
+  margin-top: 5px;
+  height: 45px;
   pointer-events: none;
 }
 .section-bar {
   display: flex;
   flex-direction: column;
   position: fixed;
-  left: 5%;
-  top: 10%;
-  min-width: 200px;
-  width: 20%;
+  left: 0%;
+  top: 15%;
+  min-width: 250px;
   height: 300px;
 }
 
 
 .listless-list {
   list-style-type: none;
-  font-size: 18px;
+  font-size: 20px;
 }
-li {
-  margin: 10px;
-  padding: 10px;
+li>a {
+  display: inline-block;
+  margin: 12  px;
+  padding: 5px, 5px;
   font-family: 'Roboto', sans-serif;
+  text-align: left;
+  color: #efeeed;
+  text-decoration: none;
+  
+
 }
+
 
 .main-stuff {
   text-align: center;
@@ -43,31 +65,49 @@ li {
   scroll-snap-type: y proximity;
 }
 .section-containers {
-  height: 110vh;
-  scroll-snap-align: start none;
+  height: 100vh;
+  scroll-snap-align: start;
 }
 #home {
-  /* background-color: tomato; */
+
 }
+/*   opacity: 0.9; */
+/*  background: linear-gradient(to bottom, , 99%, rgb(22, 64, 118, 0)); */
+/*   background: linear-gradient(to bottom, rgb(49, 47, 47), 99.5%, rgb(29, 194, 7, 0));*/
+/* background: #164076; */
 #work {
-  background-color: rgb(20, 209, 13);
+  background: rgb(22, 64, 118);
 }
 #life {
-  background-color: rgb(233, 229, 23);
+  background: #f2b635;
 }
-.link {
-  display: inline-flexbox;
-  width: 75px; 
+
+.social-links {
+  display: inline;
+  color: #efeeed;
 }
 .section-headings {
   font-family: 'Roboto', sans-serif;
-  font-size: 20;
+  font-size: 28px;
+  margin: 0px;
   display: inline-block;
+  text-align: left;
 }
-
+#the-main-man {
+  font-size: 40px;
+}
 .based-titles {
   position: relative;
   top: 30%;
+  left: -15%;
+  color: #efeeed;
+  font-family: 'Roboto', sans-serif;
+  display: inline-flex;
+  width: 190px;
+  min-width: max-content;
+  flex-direction: column;
+  text-align: left;
+  margin: 20px;
 }
 
 #funky-footer {
@@ -75,39 +115,24 @@ li {
   bottom: 1%;
   left: 45%
 }
+
+.normal-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  position: fixed;
+  top: 0%;
+  left: 40%;
+  font-size: 40px;
+
+}
+
+/* default styles below */
 @media (prefers-reduced-motion: no-preference) {
   .react-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-.Funky-header {
-  text-align: center;
-  display: flex;
-  align-items: space-between;
-  justify-content: center;
-  flex-direction: row;
-  height: 20px;
-  position: fixed;
-  left: 45%;
-  top: 0%;
-}
-
-/* default styles below */
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
