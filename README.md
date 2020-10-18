@@ -1,4 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Milo's Profile Page
+
+
+
+created with React, initialised with create react app (I'll initialise the next one myself, I swear!)
 
 ## Available Scripts
 
