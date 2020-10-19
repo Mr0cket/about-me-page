@@ -11,9 +11,10 @@ function CrazySideBar() {
     return (
         <nav className="section-bar">
             <ul>
-                <TotallyNormalSection text="this is a section" navLink="#home"/>
-                <TotallyNormalSection text="And this is a section" navLink="#work"/>
-                <TotallyNormalSection text="And this is a section" navLink="#life"/> 
+                <TotallyNormalSection text="Top" navLink="#home"/>
+                <TotallyNormalSection text="Professional" navLink="#work"/>
+                <TotallyNormalSection text="About Me" navLink="#life"/> 
+                <TotallyNormalSection text="Get in Touch!" navLink="#contact" />
             </ul>
         </nav>
     )

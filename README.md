@@ -1,4 +1,4 @@
-# Milo's Profile Page
+# My Profile Page
 
 // package.json scripts
 /*  */

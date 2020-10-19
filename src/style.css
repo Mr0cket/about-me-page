@@ -19,8 +19,11 @@ body {
   padding-left: 4px;
 }
 #addition {
-  display: none;
+  visibility: hidden;
+  font-size: 1px;
+  transition: font-size 0.5s;
 }
+
 .react-logo {
   margin-top: 5px;
   height: 45px;
@@ -39,38 +42,36 @@ body {
 
 .listless-list {
   list-style-type: none;
-  font-size: 20px;
+  font-size: 18px;
 }
 li>a {
   display: inline-block;
-  margin: 12  px;
+  margin: 10px;
   padding: 5px, 5px;
   font-family: 'Roboto', sans-serif;
   text-align: left;
   color: #efeeed;
   text-decoration: none;
-  
-
 }
 
 
-.main-stuff {
+#main-stuff-wrapper {
   text-align: center;
-  height:100%;
   /* Specifies that each element’s snap area should
   align with a 100px offset from the top edge. */
-  scroll-padding: 100px 0 0;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 20px;
+
   /* Encourages scrolling to end at a snap position when the
   operation completes, if it is near a snap position */
-  scroll-snap-type: y proximity;
 }
 .section-containers {
   height: 100vh;
   scroll-snap-align: start;
 }
-#home {
 
-}
+/* Styling of the sections */
+
 /*   opacity: 0.9; */
 /*  background: linear-gradient(to bottom, , 99%, rgb(22, 64, 118, 0)); */
 /*   background: linear-gradient(to bottom, rgb(49, 47, 47), 99.5%, rgb(29, 194, 7, 0));*/
@@ -80,6 +81,9 @@ li>a {
 }
 #life {
   background: #f2b635;
+}
+#contact {
+  background: #c6ff98;
 }
 
 .social-links {

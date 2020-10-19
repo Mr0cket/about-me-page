@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-// import * as serviceWorker from './serviceWorker';
+// import * as serviceWorker from 'serviceWorker';
 
 // render page.
 ReactDOM.render(
@@ -30,7 +30,7 @@ let Audio = {
       Audio.audioPlaying = true;
       Audio.sound.volume = 0.01;
       Audio.promise = Audio.sound.play();
-      Audio.audioTimeId = setInterval(() => {Audio.sound.volume < 0.09 ? Audio.sound.volume += 0.01 : clearInterval(Audio.audioTimeId)}, 500);
+      Audio.audioTimeId = setInterval(() => {Audio.sound.volume < 0.06 ? Audio.sound.volume += 0.01 : clearInterval(Audio.audioTimeId)}, 500);
       let volIntervalId = setInterval(()=> {
         Audio.timeCount++;
         if (Audio.timeCount > 5) clearInterval(volIntervalId);
@@ -47,23 +47,40 @@ let Audio = {
 
 // Declare user interaction events:
 
-// User click on the page to indicate user interaction.
+// User clicks on the page to indicate user interaction.
 window.onmousedown = () => (userInteracted === false) ? userInteracted = true : null;
 mainGuy.onmouseover = () => (userInteracted && !Audio.audioPlaying) ? Audio.play() : console.log('didnt work');
 mainGuy.onmouseleave = () => Audio.audioPlaying ? setTimeout(Audio.pause, 200) : null;
-
+mainGuy.addEventListener("focus", () => !Audio.audioPlaying ? Audio.play() : console.log("Audio Already playing"))
+/* 
+mainGuy.addEventListener('touchstart', () => {
+  if (!Audio.audioPlaying) {
+    Audio.play()
+    setTimeout(Audio.pause, 5000);
+   } else console.log("Audio Already playing");
+  })
+ */
 // Handle 2 different transitional events when user mouse hovers over element: 
 // - if user has interacted with the page:
-// - Start playing audio, transition volume = 0% to vol = 15% over transition period. 
-// - Transition to a brighter shade of background color over transition period.
-// - Reverse transition when user mouse leaves heading with faster transition period.
+// -> Start playing audio, transition volume = 0% to vol = 15% over transition period. (6% is enough) - Done
+// -> Transition to a brighter shade of background color over transition period. - Todo
+// -> Reverse transition when user mouse leaves heading.   - Done
 
 
 
 // text change event on hovering over element
-title.onmouseover = () => addition.style.display = "inline"; 
-title.onmouseleave = () => addition.style.display = "none";
-
+let initialised = false;
+title.onmouseover = () => 
+{if (!initialised) {
+  addition.style.visibility = "visible";
+  addition.style.fontSize = '14px';
+  initialised = true;
+} else addition.style.visibility = "visible";
+}
+// title.onmouseleave = () => {
+//   console.log('changing visibility')
+//   addition.style.visibility = "hidden" }
+// title.onmouseleave = setTimeout(}, 3000)
 
 
 //Todo: add transitions to slightly brighten background colors from centre point
@@ -75,4 +92,4 @@ title.onmouseleave = () => addition.style.display = "none";
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-// serviceWorker.unregister()
+// serviceWorker.register()
