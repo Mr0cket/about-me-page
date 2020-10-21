@@ -5,6 +5,7 @@ import CrazySideBar from './assets/components/SectionBar';
 import FunkyFooter from './assets/components/Footer';
 // Need to Import style here...?
 import './style.css'
+import ModalForm from './assets/components/ModalForm';
 
 function App() {
   
@@ -13,6 +14,7 @@ function App() {
       <NormalHeader/>
       <CrazySideBar/>
       <MainStuff/>
+      <ModalForm/>
       <FunkyFooter/>
     </div>
   )

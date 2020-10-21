@@ -1,5 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
+/* Need a system for assigning z-index 
+(Determines the order that elements which overlap eachother are displayed on the page )*/
+/* 
+Z-index (higher index -> element displayed over other elements
+Default Z-index (when not assigned) = 0
+
+    My Z-index system: 
+    10  -> Highest priority, 
+     0  -> Default priority, 
+    -1  -> Underneath all other elements.
+ */
+
+html {
+  scroll-snap-type: y mandatory;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.section-containers {
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
 body {
   margin: 0;
   color: #efeeed;
@@ -10,7 +32,9 @@ body {
   overflow: hidden;
   background-color: rgb(55 55 55);
 }
-
+.top-content {
+  height: 25%;
+}
 .title {
   display: inline;
   font-size: 14px;
@@ -57,20 +81,10 @@ li>a {
 
 #main-stuff-wrapper {
   text-align: center;
-  /* Specifies that each element’s snap area should
-  align with a 100px offset from the top edge. */
-  scroll-snap-type: y mandatory;
-  scroll-padding-top: 20px;
-
-  /* Encourages scrolling to end at a snap position when the
-  operation completes, if it is near a snap position */
-}
-.section-containers {
-  height: 100vh;
-  scroll-snap-align: start;
 }
 
-/* Styling of the sections */
+
+/* gradient Styling of the sections */
 
 /*   opacity: 0.9; */
 /*  background: linear-gradient(to bottom, , 99%, rgb(22, 64, 118, 0)); */
@@ -82,10 +96,70 @@ li>a {
 #life {
   background: #f2b635;
 }
-#contact {
-  background: #c6ff98;
+
+.modal {
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  max-width: 95%;
+  height: 400px;
+  max-height: 95%;
+  /* highest z-index when displayed.*/
+  z-index: 10;
+}
+.modal.closed {
+ display: none;
+}
+.modal-guts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* spacing around the edges of the modal box */
+  padding: 20px 50px 20px 20px;
+  /* let it scroll if message overflows the screen. */
+  overflow: hidden;
+}
+.contact-form {
+  width: 100%;
+  height: 100%;
+  padding: 2% 5%;
+}
+.modal-overlay {
+  /* 2nd highest z-index */
+  z-index: 9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  background-color: #222;
+}
+.modal-overlay.closed {
+  display: none;
 }
 
+/* .bottom-content {
+  height: 250px;
+  margin: 50px 10px;
+  text-align: left;
+}
+.bottom-content>div {
+  display: inline-block;
+  margin-top: 100px;
+  position: fixed;
+} */
+.contactMe {
+  color: #efeeed;
+  font-size: 22px;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+}
 .social-links {
   display: inline;
   color: #efeeed;
@@ -94,7 +168,6 @@ li>a {
   font-family: 'Roboto', sans-serif;
   font-size: 28px;
   margin: 0px;
-  display: inline-block;
   text-align: left;
 }
 #the-main-man {
@@ -102,17 +175,17 @@ li>a {
 }
 .based-titles {
   position: relative;
-  top: 30%;
   left: -15%;
   color: #efeeed;
   font-family: 'Roboto', sans-serif;
-  display: inline-flex;
+  display: flex;
   width: 190px;
   min-width: max-content;
   flex-direction: column;
   text-align: left;
-  margin: 20px;
+  margin: 5% auto;
 }
+
 
 #funky-footer {
   position: fixed;
@@ -121,16 +194,50 @@ li>a {
 }
 
 .normal-header {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  position: fixed;
-  top: 0%;
-  left: 40%;
   font-size: 40px;
-
+  position: fixed;
+  left: 0;
+  right: 0;
 }
+#positioner {
+  display: flex;
+  width: max-content;
+  margin: 0 auto;
+}
+.contact-form input, .contact-form textarea {
+  background: lightblue;
+}
+.contact-form 
 
+@media screen and (max-width: 850px) {
+  .based-titles {
+    left: 0;
+  }
+  .optional-text {
+    display: none;
+  }
+  .listless-list {
+    font-size: 35px;
+  }
+  .contactMe {
+    font-size: 35px;
+  }
+ 
+}
+@media screen and (min-width: 860px) {
+  .based-titles {
+    left: -15%;
+  }
+  .optional-text {
+    display: inline;
+  }
+  .listless-list {
+    font-size: 18px;
+  }
+  .contactMe {
+    font-size: 18px;
+  }
+}
 /* default styles below */
 @media (prefers-reduced-motion: no-preference) {
   .react-logo {
@@ -144,4 +251,7 @@ li>a {
   to {
     transform: rotate(360deg);
   }
+}
+ul {
+  padding-inline-start: 5px;
 }

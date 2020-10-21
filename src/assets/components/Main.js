@@ -1,6 +1,7 @@
 import React from 'react';
 import audio from "../media/holy.wav";
-
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faCommentDots, faHandshake } from '@fortawesome/free-solid-svg-icons';
 
 function MainStuff() {
     
@@ -43,6 +44,8 @@ function HomeSection(param) {
 
     return (
         <section id="home" className="section-containers">
+            <div className="top-content"></div>
+
             <div className="based-titles">
                 <h1 id="the-main-man" className="section-headings">Milo Silva</h1>
                     <h3 id="dream-job" className="title"> Full-Stack Developer<span id="addition" className="title" >...Kind of</span></h3> 
@@ -51,6 +54,9 @@ function HomeSection(param) {
                     <source src={audio} type="audio/mpeg" onLoad={() => console.log('audio loaded')}/>
                     Your browser does not support the audio element.
                 </audio>
+            </div>
+            <div className="bottom-content"> 
+                <Contact/>
             </div>
         </section>
     )
@@ -68,12 +74,36 @@ class Section extends React.Component {
         return (
             <section id={this.id} className="section-containers">
                 <div style={this.blendStyle}></div>
+                <div className="top-content"></div>
                 <div className="based-titles">
-            <h1 className="section-headings">{this.sectionName}</h1>
+                    <h1 className="section-headings">{this.sectionName}</h1>
+                </div>
+                <div className="bottom-content"> 
                 </div>
             </section>
         )
     }
 }
 
+class Contact extends React.Component {
+    constructor() {
+        super();
+    }
+    openModal() {
+        var modal = document.querySelector("#modal");
+        var modalOverlay = document.querySelector("#modal-overlay");
+
+        modal.classList.toggle("closed");
+        modalOverlay.classList.toggle("closed");
+    }
+
+    render() {
+        return (
+            <div>
+                <a href="#"className="contactMe" onClick={this.openModal}> <FontAwesomeIcon icon={faHandshake}/>  <span className="optional-text">Get in Touch!</span></a>
+            </div>
+        )
+    }
+}
 export default MainStuff;
+

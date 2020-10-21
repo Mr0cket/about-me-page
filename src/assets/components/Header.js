@@ -8,9 +8,11 @@ export default class aNormalHeader extends React.Component {
     render() {
         return (
             <header className="normal-header">
-                <a className="social-links"href="https://github.com/Mr0cket"><FontAwesomeIcon icon={faGithub}/></a>
-                <img src={logo} className="react-logo" alt="react logo"/>
-                <a className="social-links" href="https://www.linkedin.com/in/milo-silva/"><FontAwesomeIcon icon={faLinkedin}/></a>
+                <div id="positioner">
+                    <a className="social-links"href="https://github.com/Mr0cket"><FontAwesomeIcon icon={faGithub}/></a>
+                    <img src={logo} className="react-logo" alt="react logo"/>
+                    <a className="social-links" href="https://www.linkedin.com/in/milo-silva/"><FontAwesomeIcon icon={faLinkedin}/></a>
+                </div>
             </header>
         )
     }
