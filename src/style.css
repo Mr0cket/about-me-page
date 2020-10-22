@@ -33,7 +33,7 @@ body {
   background-color: rgb(55 55 55);
 }
 .top-content {
-  height: 25%;
+  height: 20%;
 }
 .title {
   display: inline;
@@ -183,7 +183,7 @@ li>a {
   min-width: max-content;
   flex-direction: column;
   text-align: left;
-  margin: 5% auto;
+  margin: 2% auto;
 }
 
 
@@ -207,7 +207,6 @@ li>a {
 .contact-form input, .contact-form textarea {
   background: lightblue;
 }
-.contact-form 
 
 @media screen and (max-width: 850px) {
   .based-titles {

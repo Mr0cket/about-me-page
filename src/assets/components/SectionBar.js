@@ -4,10 +4,32 @@ import { faBriefcase, faHandshake, faHome, faSnowboarding } from '@fortawesome/f
 
 
 
-function TotallyNormalSection(props) {
-    return (
-    <li className="listless-list"><a href={props.navLink}><FontAwesomeIcon icon={props.icon}/> <span className="optional-text">{props.text}</span></a></li>
-    )
+class TotallyNormalSection extends React.Component {
+    constructor (props) {
+        super();
+        this.icon = props.icon
+        this.navLink = props.navLink
+        this.text = props.text
+    }
+    openModal() {
+        var modal = document.querySelector("#modal");
+        var modalOverlay = document.querySelector("#modal-overlay");
+        modal.classList.toggle("closed");
+        modalOverlay.classList.toggle("closed");
+    }
+    render () {
+        if (this.text === "Get in Touch!") { 
+            return (
+                <li className="listless-list">
+                    <a href="#"className="contactMe" onClick={this.openModal}> <FontAwesomeIcon icon={this.icon}/>  <span className="optional-text">{this.text}</span></a>
+                </li>
+                )
+        } else {
+            return (
+                <li className="listless-list"><a href={this.navLink}><FontAwesomeIcon icon={this.icon}/> <span className="optional-text">{this.text}</span></a></li>
+            )
+        }   
+    }
 }
 
 function CrazySideBar() {
@@ -17,8 +39,9 @@ function CrazySideBar() {
         <nav className="section-bar">
             <ul>
                 <TotallyNormalSection text="Home" navLink="#home" icon={faHome}/>
-                <TotallyNormalSection text="serious stuff" navLink="#work" icon={faBriefcase}/>
-                <TotallyNormalSection text="Fun stuff" navLink="#life" icon={faSnowboarding}/> 
+                <TotallyNormalSection text="Professional stuff" navLink="#work" icon={faBriefcase}/>
+                <TotallyNormalSection text="Life stuff" navLink="#life" icon={faSnowboarding}/> 
+                <TotallyNormalSection text="Get in Touch!" navLink='' icon={faHandshake} />
             </ul>
         </nav>
     )

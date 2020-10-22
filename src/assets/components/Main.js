@@ -32,7 +32,7 @@ function MainStuff() {
 // when transitioning '#home' <-> '#work' and '#contact'. No idea why... but 3 sections is scroll limit for now.
 
 {/*             <Section 
-                name= "Get in Touch!"
+                name= ""
                 id='contact'
                 blendStyle={{
                     background: "linear-gradient(to bottom, #f2b635, #efeeed",
@@ -56,7 +56,6 @@ function HomeSection(param) {
                 </audio>
             </div>
             <div className="bottom-content"> 
-                <Contact/>
             </div>
         </section>
     )
@@ -85,25 +84,18 @@ class Section extends React.Component {
     }
 }
 
-class Contact extends React.Component {
-    constructor() {
-        super();
-    }
-    openModal() {
-        var modal = document.querySelector("#modal");
-        var modalOverlay = document.querySelector("#modal-overlay");
-
-        modal.classList.toggle("closed");
-        modalOverlay.classList.toggle("closed");
+class LifeSection extends Section {
+    constructor(props) {
+        super(props)
     }
 
     render() {
-        return (
-            <div>
-                <a href="#"className="contactMe" onClick={this.openModal}> <FontAwesomeIcon icon={faHandshake}/>  <span className="optional-text">Get in Touch!</span></a>
-            </div>
-        )
+
+        return
     }
+    
 }
+
+
 export default MainStuff;
 
