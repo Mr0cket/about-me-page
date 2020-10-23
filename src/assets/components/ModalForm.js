@@ -1,4 +1,7 @@
 import React from 'react';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+
 
 class ModalForm extends React.Component {
     constructor(props) {
@@ -28,24 +31,23 @@ class ModalForm extends React.Component {
             <div>
                 <div className="modal closed" id="modal" style={this.state.formStyle}>
                     <div className="modal-guts">
-                        <button onClick={this.closeModal}>Close</button>
-                        <form className="contact-form"action="/post">
-                            <label htmlFor="name">Your name: </label>
+                        <a onClick={this.closeModal} href=""><FontAwesomeIcon icon={faTimes}/></a>
+                        <form className="contact-form">
+                            
                             <input type="text"
                                 id="name"
                                 name="name"
                                 value={this.state.name}
-                                placeholder="Bob"
+                                placeholder="Name"
                                 onChange={this.handleChange} />
-                            <label htmlFor='email'>Email: </label>
+                          
                             <input type="email"
                                 id="email"
                                 name="email"
                                 value={this.state.email}
-                                placeholder="myaddress@..."
+                                placeholder="email"
                                 onChange={this.handleChange} /><br />
-                            <textarea rows="7" 
-                                    cols="60" 
+                            <textarea                                      
                                     name="message"
                                     placeholder="Collab Bro...?">
                             </textarea>
@@ -60,4 +62,5 @@ class ModalForm extends React.Component {
     }
 }
 
+/* <label htmlFor="name">Name </label>   <label htmlFor='email'>Email </label>  */
 export default ModalForm;

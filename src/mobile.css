@@ -1,0 +1,32 @@
+@media screen and (max-width: 850px) {
+    .based-titles {
+      left: 0;
+    }
+    .optional-text {
+      display: none;
+    }
+    .listless-list {
+      font-size: 35px;
+    }
+    .contactMe {
+      font-size: 35px;
+    }
+    .life.pic {
+  
+    }
+   
+  }
+  @media screen and (min-width: 860px) {
+    .based-titles {
+      left: -15%;
+    }
+    .optional-text {
+      display: inline;
+    }
+    .listless-list {
+      font-size: 18px;
+    }
+    .contactMe {
+      font-size: 18px;
+    }
+  }

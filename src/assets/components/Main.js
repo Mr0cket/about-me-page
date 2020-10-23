@@ -1,24 +1,27 @@
 import React from 'react';
 import audio from "../media/holy.wav";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faCommentDots, faHandshake } from '@fortawesome/free-solid-svg-icons';
-
+import che from "../media/El-Che.jpg"
+import niseko from "../media/mt-niseko.jpg"
+import mind from "../media/open-your-mind.jpg"
+import snow from "../media/sit-in-snow.jpg"
+import rock from "../media/sit-on-rock.jpg"
+import tamdao from "../media/sit-on-sign.jpg"
 function MainStuff() {
     
 
     return (
         <main id="main-stuff-wrapper">
             <HomeSection/>
-            <Section 
-                name= "this is Work Section" 
+            <WorkSection 
+                name= "Work Stuff" 
                 blendStyle={{
                     background: "linear-gradient(to bottom, rgb(55 55 55), #164076)",
                     height: "5px",
                 }}
                 id= 'work'
                 />
-            <Section 
-                name="this is LifeSection"
+            <LifeSection 
+                name="Some pics and Stuff"
                 id='life'
                 blendStyle={{
                     background: "linear-gradient(to bottom, #164076, #f2b635)",
@@ -31,16 +34,9 @@ function MainStuff() {
 // for some reason, when I add > 3 sections, the navigation smooth-scrolling effect breaks.
 // when transitioning '#home' <-> '#work' and '#contact'. No idea why... but 3 sections is scroll limit for now.
 
-{/*             <Section 
-                name= ""
-                id='contact'
-                blendStyle={{
-                    background: "linear-gradient(to bottom, #f2b635, #efeeed",
-                    height: '5px'
-                }}
-            /> */}
 
-function HomeSection(param) {
+
+function HomeSection() {
 
     return (
         <section id="home" className="section-containers">
@@ -62,11 +58,11 @@ function HomeSection(param) {
 }
 
 class Section extends React.Component {
-    constructor(param) {
+    constructor(props) {
         super();
-        this.sectionName = param.name;
-        this.blendStyle = param.blendStyle;
-        this.id = param.id;
+        this.sectionName = props.name;
+        this.blendStyle = props.blendStyle;
+        this.id = props.id;
     }
     render() {
 
@@ -84,18 +80,59 @@ class Section extends React.Component {
     }
 }
 
-class LifeSection extends Section {
-    constructor(props) {
-        super(props)
-    }
+class WorkSection extends Section {
+
 
     render() {
 
-        return
+        return (
+            <section id={this.id} className="section-containers">
+                <div className="work right">
+                    <h3 className="work title">My Skills</h3>
+                    <ul className="work list">
+                        <li>Front-End Languages (HTML, css, js)</li>
+                        <li>API calls</li>
+                        <li>Server request handling</li>  
+                        <li>React Framework</li>
+                        <li>Domain Knowledge: FinTech {'&'} OnlinePlayments</li>
+                    </ul>
+                </div>
+                <div style={this.blendStyle}></div>
+                    <div className="top-content"></div>
+                    <div className="based-titles">
+                        <h1 className="section-headings">{this.sectionName}</h1>
+                    </div>
+                    <div className="bottom-content"> 
+                    </div>
+            </section>
+        )
     }
     
 }
 
+class LifeSection extends Section {
+
+    render () {
+        
+        return (
+            <section id={this.id} className="section-containers">
+                <div style={this.blendStyle}></div>
+                <div className="top-content"></div>
+                <div className="based-titles">
+                    <h1 className="section-headings">{this.sectionName}</h1>
+                </div>
+                <div className="bottom-content"> 
+                    <img className="myPics"src={che} alt="A fearless leader"/>
+                    <img className="myPics"src={tamdao} alt="A big sign for a small village"/>
+                    <img className="myPics"src={snow} alt="I like snow!"/>
+                    <img className="myPics"src={rock} alt="A view of HaLong Bay"/>
+                    <img className="myPics"src={mind} alt="Ice Scupture"/>
+                    <img className="myPics"src={niseko} alt="Snowy mountains!"/>
+                </div>
+            </section>
+        )
+    }
+}
 
 export default MainStuff;
 
