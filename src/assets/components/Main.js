@@ -94,7 +94,7 @@ class WorkSection extends Section {
                         <li>API calls</li>
                         <li>Server request handling</li>  
                         <li>React Framework</li>
-                        <li>Domain Knowledge: FinTech {'&'} OnlinePlayments</li>
+                        <li>Building this webpage!</li>
                     </ul>
                 </div>
                 <div style={this.blendStyle}></div>
@@ -112,6 +112,9 @@ class WorkSection extends Section {
 
 class LifeSection extends Section {
 
+    fullDisplay () {
+
+    }
     render () {
         
         return (
@@ -121,18 +124,71 @@ class LifeSection extends Section {
                 <div className="based-titles">
                     <h1 className="section-headings">{this.sectionName}</h1>
                 </div>
-                <div className="bottom-content"> 
-                    <img className="myPics"src={che} alt="A fearless leader"/>
-                    <img className="myPics"src={tamdao} alt="A big sign for a small village"/>
-                    <img className="myPics"src={snow} alt="I like snow!"/>
-                    <img className="myPics"src={rock} alt="A view of HaLong Bay"/>
-                    <img className="myPics"src={mind} alt="Ice Scupture"/>
-                    <img className="myPics"src={niseko} alt="Snowy mountains!"/>
+                <div className="bottom-content" style={{'padding': '0 2%'}}> 
+                 <div className="gallery" 
+                    style={{    }}>
+                    <div>
+                    <div class="gallery-scroller">
+                        <div>
+                            <img className='life pic' src={che}/> 
+                        </div>
+                        <div>
+                            <img className='life pic' src={niseko}/>
+                        </div>
+                        <div>
+                            <img className='life pic' src={snow}/>
+                        </div>
+                        <div>
+                            <img className='life pic' src={mind}/>
+                        </div>
+                        <div>
+                            <img className='life pic' src={rock}/>
+                        </div>
+                        <div>
+                            <img className='life pic' src={tamdao}/>
+                        </div>
+
+                    </div>
+                      
+                    </div>
+                 </div>
                 </div>
             </section>
         )
     }
 }
 
+/*  "display" : "flex",
+                        'flexWrap' : 'wrap',
+                        'flexDirection' : "row",
+                        "overflow-x" : "scroll",
+                        "height" : "100%",
+                        'width' : "100%",
+                        "background" : "#222" */
+
+function GalleryItem(props) {
+    
+    return (
+        <div 
+            className="photoDiv" 
+            style={{
+                'display': "inline-block",
+                'margin' : '20px 2%',
+                'padding' : '5px',
+                'height' : '90%',
+                'width' : '200px',
+                'background' : 'yellow'
+            }
+        }>
+
+        </div>
+    )
+}
+/*    <img className="myPics"src={che} alt="A fearless leader"/>
+                    <img className="myPics"src={tamdao} alt="A big sign for a small village"/>
+                    <img className="myPics"src={snow} alt="I like snow!"/>
+                    <img className="myPics"src={rock} alt="A view of HaLong Bay"/>
+                    <img className="myPics"src={mind} alt="Ice Scupture"/>
+                    <img className="myPics"src={niseko} alt="Snowy mountains!"/> */
 export default MainStuff;
 

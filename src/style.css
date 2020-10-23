@@ -61,6 +61,7 @@ body {
   top: 15%;
   min-width: 250px;
   height: 300px;
+  z-index: 6;
 }
 .work.right {
   position: absolute;
@@ -100,8 +101,10 @@ li>a {
   background: rgb(22, 64, 118);
 }
 #life {
-  background: #f2b635;
+/*   background: #f2b635;*/
+  background: rgb(32, 42, 54);
 }
+
 
 .modal {
   display: flex;
@@ -128,8 +131,38 @@ li>a {
   margin: 1%;
   /* let it scroll if message overflows the screen. */
 }
+.gallery {
+  max-width: 95%;
+  padding: 0;
+  border-radius: 10px;
+}
 
+.gallery-scroller {
+  /* snap mandatory on horizontal axis  */
+ scroll-snap-type: x mandatory;
+ 
+ overflow-x: scroll;
+ overflow-y: hidden;
 
+ display: flex;
+ align-items: center;
+
+ height: 480px;
+ 
+ /* Enable Safari touch scrolling physics which is needed for scroll snap */
+ -webkit-overflow-scrolling: touch;
+}
+.gallery-scroller div {
+  scroll-snap-align: center;
+  margin: 10px;
+  padding-right: 10px;
+  position: relative;
+}
+
+.life.pic {
+  max-width: 85vw;
+  max-height: 65vh;
+}
 .modal-overlay {
   /* 2nd highest z-index */
   z-index: 9;
@@ -148,10 +181,7 @@ li>a {
 .bottom-content {
   height: 70%;
 }
-.myPics {
-  height: 150px;
-  max-height: 30%;
-}
+
 .contactMe {
   color: #efeeed;
   font-size: 22px;
@@ -232,36 +262,6 @@ li>a {
   height: 100%;
   max-height: 50%;
   overflow: hidden;
-}
-
-@media screen and (max-width: 850px) {
-  .based-titles {
-    left: 0;
-  }
-  .optional-text {
-    display: none;
-  }
-  .listless-list {
-    font-size: 35px;
-  }
-  .contactMe {
-    font-size: 35px;
-  }
- 
-}
-@media screen and (min-width: 860px) {
-  .based-titles {
-    left: -15%;
-  }
-  .optional-text {
-    display: inline;
-  }
-  .listless-list {
-    font-size: 18px;
-  }
-  .contactMe {
-    font-size: 18px;
-  }
 }
 /* default styles below */
 @media (prefers-reduced-motion: no-preference) {

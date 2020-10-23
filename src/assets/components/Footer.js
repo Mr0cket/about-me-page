@@ -10,4 +10,5 @@ function FunkyFooter() {
     )
 }
 
+
 export default FunkyFooter;
