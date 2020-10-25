@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  font-size: calc(1em + 1vw);
 }
 
 body {

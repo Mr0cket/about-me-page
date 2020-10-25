@@ -6,8 +6,11 @@ import mind from "../media/open-your-mind.jpg"
 import snow from "../media/sit-in-snow.jpg"
 import rock from "../media/sit-on-rock.jpg"
 import tamdao from "../media/sit-on-sign.jpg"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGitkraken, faHtml5, faNodeJs, faReact } from '@fortawesome/free-brands-svg-icons';
+import { faCode, faHammer, faServer } from '@fortawesome/free-solid-svg-icons';
 function MainStuff() {
-    
+    console.log(`main stuff rendered`)
 
     return (
         <main id="main-stuff-wrapper">
@@ -21,18 +24,18 @@ function MainStuff() {
                 id= 'work'
                 />
             <LifeSection 
-                name="Some pics and Stuff"
+                name="Photo Gallery"
                 id='life'
                 blendStyle={{
-                    background: "linear-gradient(to bottom, #164076, #f2b635)",
+                    background: "linear-gradient(to bottom, #164076, rgb(32, 42, 54))",
                     height: "5px",
                 }}
             />
         </main>
     )
 }
-// for some reason, when I add > 3 sections, the navigation smooth-scrolling effect breaks.
-// when transitioning '#home' <-> '#work' and '#contact'. No idea why... but 3 sections is scroll limit for now.
+// for some reason, when I add > 3 sections, the navigation smooth-scrolling effect breaks... maybe that was a problem with a CSS overflow setting?
+// when transitioning '#home' <-> '#work' and '#contact'. No idea why... but 3 sections is scroll limit for now. (probably because of the #main-stuff height setting.)
 
 
 
@@ -44,10 +47,10 @@ function HomeSection() {
 
             <div className="based-titles">
                 <h1 id="the-main-man" className="section-headings">Milo Silva</h1>
-                    <h3 id="dream-job" className="title"> Full-Stack Developer<span id="addition" className="title" >...Kind of</span></h3> 
+                    <h3 id="dream-job" className="title"> Full-Stack Developer<span id="addition" className="title" >...almost</span></h3> 
                     
                 <audio id="holySound">
-                    <source src={audio} type="audio/mpeg" onLoad={() => console.log('audio loaded')}/>
+                    <source src={audio} type="audio/mpeg" />
                     Your browser does not support the audio element.
                 </audio>
             </div>
@@ -87,22 +90,25 @@ class WorkSection extends Section {
 
         return (
             <section id={this.id} className="section-containers">
-                <div className="work right">
-                    <h3 className="work title">My Skills</h3>
-                    <ul className="work list">
-                        <li>Front-End Languages (HTML, css, js)</li>
-                        <li>API calls</li>
-                        <li>Server request handling</li>  
-                        <li>React Framework</li>
-                        <li>Building this webpage!</li>
-                    </ul>
-                </div>
+
                 <div style={this.blendStyle}></div>
                     <div className="top-content"></div>
                     <div className="based-titles">
                         <h1 className="section-headings">{this.sectionName}</h1>
                     </div>
                     <div className="bottom-content"> 
+                        <div className="work right">
+                            <h3 className="work title">Experience</h3>
+                            <ul className="work list">
+                                <li><FontAwesomeIcon icon={faHtml5}/>  Front-End Languages (HTML, css, js)</li>
+                                <li><FontAwesomeIcon icon={faCode}/>  API calls</li>
+                                <li><FontAwesomeIcon icon={faServer}/>  Server stuff</li>  
+                                <li><FontAwesomeIcon icon={faReact}/>  React.js </li>
+                                <li><FontAwesomeIcon icon={faNodeJs}/>  Node </li>
+                                <li><FontAwesomeIcon icon={faGitkraken}/>  Github</li>
+                                <li><FontAwesomeIcon icon={faHammer}/>  Building this webpage!</li>
+                            </ul>
+                        </div>
                     </div>
             </section>
         )
@@ -112,9 +118,6 @@ class WorkSection extends Section {
 
 class LifeSection extends Section {
 
-    fullDisplay () {
-
-    }
     render () {
         
         return (
@@ -128,26 +131,13 @@ class LifeSection extends Section {
                  <div className="gallery" 
                     style={{    }}>
                     <div>
-                    <div class="gallery-scroller">
-                        <div>
-                            <img className='life pic' src={che}/> 
-                        </div>
-                        <div>
-                            <img className='life pic' src={niseko}/>
-                        </div>
-                        <div>
-                            <img className='life pic' src={snow}/>
-                        </div>
-                        <div>
-                            <img className='life pic' src={mind}/>
-                        </div>
-                        <div>
-                            <img className='life pic' src={rock}/>
-                        </div>
-                        <div>
-                            <img className='life pic' src={tamdao}/>
-                        </div>
-
+                    <div className="gallery-scroller">
+                        <MyPic src={che} alt="Revolutionary Leader"/>   
+                        <MyPic src={niseko} alt="Snowy mountains!"/>
+                        <MyPic src={snow} alt="I like snow!"/>
+                        <MyPic src={mind} alt="Ice Scupture"/>
+                        <MyPic src={rock} alt="A view of HaLong Bay"/>
+                        <MyPic src={tamdao} alt="A big sign for a small village"/>
                     </div>
                       
                     </div>
@@ -158,37 +148,17 @@ class LifeSection extends Section {
     }
 }
 
-/*  "display" : "flex",
-                        'flexWrap' : 'wrap',
-                        'flexDirection' : "row",
-                        "overflow-x" : "scroll",
-                        "height" : "100%",
-                        'width' : "100%",
-                        "background" : "#222" */
+class MyPic extends React.Component {
 
-function GalleryItem(props) {
-    
-    return (
-        <div 
-            className="photoDiv" 
-            style={{
-                'display': "inline-block",
-                'margin' : '20px 2%',
-                'padding' : '5px',
-                'height' : '90%',
-                'width' : '200px',
-                'background' : 'yellow'
-            }
-        }>
-
-        </div>
-    )
+    render() { 
+        return (
+            <div>
+                <img className='life pic' src={this.props.src} alt={this.props.alt}/> 
+            </div>
+        )
+    }
 }
-/*    <img className="myPics"src={che} alt="A fearless leader"/>
-                    <img className="myPics"src={tamdao} alt="A big sign for a small village"/>
-                    <img className="myPics"src={snow} alt="I like snow!"/>
-                    <img className="myPics"src={rock} alt="A view of HaLong Bay"/>
-                    <img className="myPics"src={mind} alt="Ice Scupture"/>
-                    <img className="myPics"src={niseko} alt="Snowy mountains!"/> */
+
+
 export default MainStuff;
 

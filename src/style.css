@@ -37,14 +37,14 @@ body {
 }
 .title {
   display: inline;
-  font-size: 14px;
+  font-size: 0.7em;
   margin: 0;
   text-align: left;
   padding-left: 4px;
 }
 #addition {
   visibility: hidden;
-  font-size: 1px;
+  font-size: 0.5em;
   transition: font-size 0.5s;
 }
 
@@ -59,23 +59,27 @@ body {
   position: fixed;
   left: 0%;
   top: 15%;
-  min-width: 250px;
-  height: 300px;
   z-index: 6;
+  opacity: 1;
+  border-radius: 10px;
+  background-color: rgba(29, 29, 29, 0.233);
 }
 .work.right {
   position: absolute;
   right: 0;
-  height: 100%;
   width: 40%;
+  padding: 0.25em;
   z-index: 1;
+  border-radius: 1em;
+  background-color: dimgrey;
 }
 
 .listless-list {
   list-style-type: none;
-  font-size: 18px;
+  font-size: 0.8em;
+  padding: 0.5em;
 }
-li>a {
+li>a, li>button {
   display: inline-block;
   margin: 10px;
   padding: 5px, 5px;
@@ -84,7 +88,6 @@ li>a {
   color: #efeeed;
   text-decoration: none;
 }
-
 
 #main-stuff-wrapper {
   text-align: center;
@@ -131,9 +134,14 @@ li>a {
   margin: 1%;
   /* let it scroll if message overflows the screen. */
 }
+
+
+
+/* Photo Gallery Styling */
+
 .gallery {
-  max-width: 95%;
-  padding: 0;
+  width: 90%;
+  margin: 0 auto;
   border-radius: 10px;
 }
 
@@ -154,17 +162,19 @@ li>a {
 }
 .gallery-scroller div {
   scroll-snap-align: center;
-  margin: 10px;
+  min-width: 100%;
+  margin: 5vh auto;
   padding-right: 10px;
   position: relative;
 }
 
 .life.pic {
-  max-width: 85vw;
+  max-width: 80vw;
   max-height: 65vh;
+  border-radius: 10px;
 }
 .modal-overlay {
-  /* 2nd highest z-index */
+  /* use 2nd highest z-index */
   z-index: 9;
   position: fixed;
   top: 0;
@@ -182,34 +192,29 @@ li>a {
   height: 70%;
 }
 
-.contactMe {
-  color: #efeeed;
-  font-size: 22px;
-  font-family: 'Roboto', sans-serif;
-  text-decoration: none;
-}
+
 .social-links {
   display: inline;
   color: #efeeed;
 }
 .section-headings {
   font-family: 'Roboto', sans-serif;
-  font-size: 24px;
+  font-size: 1.2em; /* 24px */
   margin: 0px;
   text-align: left;
 }
 #the-main-man {
-  font-size: 40px;
+  font-size: 1.5em;
 }
 .work.title {
-  margin-top: 3em;
-  display: block;
+    display: block;
+  font-size: 1em;
   text-align: center;
 }
 .work.list {
   list-style-type: none;
   text-align: left;
-  font-size: small;
+  font-size: 0.75em;
 }
 .based-titles {
   position: relative;
@@ -217,8 +222,7 @@ li>a {
   color: #efeeed;
   font-family: 'Roboto', sans-serif;
   display: flex;
-  width: 190px;
-  min-width: max-content;
+  width: max-content;
   flex-direction: column;
   text-align: left;
   margin: 2% auto;
@@ -232,7 +236,7 @@ li>a {
 }
 
 .normal-header {
-  font-size: 40px;
+  font-size: 1.4em;
   position: fixed;
   left: 0;
   right: 0;
@@ -241,6 +245,9 @@ li>a {
   display: flex;
   width: max-content;
   margin: 0 auto;
+}
+.contactMe {
+  font-size: 1em;
 }
 .contact-form {
   width: 95%;
@@ -263,6 +270,17 @@ li>a {
   max-height: 50%;
   overflow: hidden;
 }
+.close-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+text-decoration: none;
+}
+
 /* default styles below */
 @media (prefers-reduced-motion: no-preference) {
   .react-logo {
@@ -277,6 +295,8 @@ li>a {
     transform: rotate(360deg);
   }
 }
-ul {
+.section-bar ul {
   padding-inline-start: 5px;
+  margin-block-start: 0.25em;
+  margin-block-end: 0.25em;
 }

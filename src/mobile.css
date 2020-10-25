@@ -5,15 +5,14 @@
     .optional-text {
       display: none;
     }
+    .work.right {
+      position: static;
+      margin: 0 auto;
+    }
     .listless-list {
-      font-size: 35px;
+      font-size: 1.5em;
     }
-    .contactMe {
-      font-size: 35px;
-    }
-    .life.pic {
-  
-    }
+   
    
   }
   @media screen and (min-width: 860px) {
@@ -23,10 +22,8 @@
     .optional-text {
       display: inline;
     }
-    .listless-list {
-      font-size: 18px;
-    }
-    .contactMe {
-      font-size: 18px;
+    .work.right {
+      position: absolute;
+
     }
   }

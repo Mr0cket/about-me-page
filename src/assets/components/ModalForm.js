@@ -5,34 +5,68 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 class ModalForm extends React.Component {
     constructor(props) {
-        super();
+        super(props);
         this.state = {
             name : "",
             email : "",
+            modalOpen : false,
+            propsChanged : true
         }
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleChange.bind(this);
     }
-    handleChange(input) {
-        if (input.target.id === "name") {
-            this.setState({name: input.target.value});
-        } else if (input.target.id === "email"){
-            this.setState({email: input.target.value})
-        }
+    handleChange(event) {
+            this.setState({
+                [event.target.name]: event.target.value
+            });
     }
-    closeModal() {
-        var modal = document.querySelector("#modal");
-        var modalOverlay = document.querySelector("#modal-overlay");    
+    handleSubmit() {
+        console.log('a message was submitted!')
+        this.setState({
+            modalopen : false
+        })
+        console.log(`modalopen: ${this.state.modalOpen}`)
+    }
+    // TODO: rewrite logic of getDerivedStateFromProps to improve the state stuff.
+    // Also: need to check whether this is the correct use case for getDerivedStateFromProps method.
+    static getDerivedStateFromProps(props, state) {
+        console.log(`called getDerivedStateFromProps.`)
+        
+        if (!state.modalOpen && !state.propsChanged) {
+            return {
+                modalOpen: props.modalOpen,
+                propsChanged: true
+            } 
+        }  else if (state.propsChanged) {
+            return {
+                modalOpen: false,
+                propsChanged: false
+            }
+        } 
 
-        modal.classList.toggle("closed")
-        modalOverlay.classList.toggle("closed")
-    }
+    } 
+    
+
     render() {
+        console.log('modal form was rendered')
+
+        // use modalState to toggle 'closed' class when modalClosed == true.
+        let modalState = this.state.modalOpen ? "" : "closed";
+
+        console.log(`current modalState: ${modalState}`)
         return (
             <div>
-                <div className="modal closed" id="modal" style={this.state.formStyle}>
+                <div className={`modal ${modalState}`} id="modal" style={this.state.formStyle}>
                     <div className="modal-guts">
-                        <a onClick={this.closeModal} href=""><FontAwesomeIcon icon={faTimes}/></a>
-                        <form className="contact-form">
+                        <button 
+                           className="close-button"
+                            onClick={() => {
+                                console.log('changing modalOpen state')
+                                this.setState({modalOpen: false})}} 
+                            href="">
+                                <FontAwesomeIcon icon={faTimes}/>
+                        </button>
+                        <form className="contact-form" onSubmit={this.handleSubmit}>
                             
                             <input type="text"
                                 id="name"
@@ -46,21 +80,21 @@ class ModalForm extends React.Component {
                                 name="email"
                                 value={this.state.email}
                                 placeholder="email"
-                                onChange={this.handleChange} /><br />
+                                onChange={this.handleChange}/><br />
                             <textarea                                      
                                     name="message"
-                                    placeholder="Collab Bro...?">
+                                    placeholder="Collab Bro...?"
+                                    >
                             </textarea>
                             <input type="submit" value="Submit" />
                         </form>
                     </div>
                 </div>
-                <div class="modal-overlay closed" id="modal-overlay">
+                <div className={`modal-overlay ${modalState}`} id="modal-overlay" onClick={() => this.setState({modalOpen: false})}>
                 </div>
             </div>
         );
     }
 }
 
-/* <label htmlFor="name">Name </label>   <label htmlFor='email'>Email </label>  */
 export default ModalForm;

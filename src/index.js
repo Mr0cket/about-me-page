@@ -73,7 +73,7 @@ let initialised = false;
 title.onmouseover = () => 
 {if (!initialised) {
   addition.style.visibility = "visible";
-  addition.style.fontSize = '14px';
+  addition.style.fontSize = '0.7em';
   initialised = true;
 } else addition.style.visibility = "visible";
 }

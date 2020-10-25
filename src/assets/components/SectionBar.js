@@ -5,34 +5,27 @@ import { faBriefcase, faHandshake, faHome, faSnowboarding } from '@fortawesome/f
 
 
 class TotallyNormalSection extends React.Component {
-    constructor (props) {
-        super();
-        this.icon = props.icon
-        this.navLink = props.navLink
-        this.text = props.text
-    }
-    openModal() {
-        var modal = document.querySelector("#modal");
-        var modalOverlay = document.querySelector("#modal-overlay");
-        modal.classList.toggle("closed");
-        modalOverlay.classList.toggle("closed");
-    }
+
+// very strange behaviour: whenever I click 'get in Touch' button, the page rerenders... 
+// Can't find where the event listener is though.
     render () {
-        if (this.text === "Get in Touch!") { 
+        if (this.props.text === "Get in Touch!") { 
             return (
                 <li className="listless-list">
-                    <a href="#"className="contactMe" onClick={this.openModal}> <FontAwesomeIcon icon={this.icon}/>  <span className="optional-text">{this.text}</span></a>
+                    <button  className="contactMe close-button" onClick={this.props.openModal}> 
+                        <FontAwesomeIcon icon={this.props.icon}/> 
+                        <span className="optional-text">{this.props.text}</span></button>
                 </li>
                 )
         } else {
             return (
-                <li className="listless-list"><a href={this.navLink}><FontAwesomeIcon icon={this.icon}/> <span className="optional-text">{this.text}</span></a></li>
+                <li className="listless-list"><a href={this.props.navLink}><FontAwesomeIcon icon={this.props.icon}/> <span className="optional-text">{this.props.text}</span></a></li>
             )
         }   
     }
 }
 
-function CrazySideBar() {
+function CrazySideBar(props) {
     
 
     return (
@@ -41,7 +34,7 @@ function CrazySideBar() {
                 <TotallyNormalSection text="Home" navLink="#home" icon={faHome}/>
                 <TotallyNormalSection text="Professional stuff" navLink="#work" icon={faBriefcase}/>
                 <TotallyNormalSection text="Life stuff" navLink="#life" icon={faSnowboarding}/> 
-                <TotallyNormalSection text="Get in Touch!" navLink='' icon={faHandshake} />
+                <TotallyNormalSection text="Get in Touch!"  icon={faHandshake} openModal={props.openModal} />
             </ul>
         </nav>
     )
