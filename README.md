@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start"
 
-created with React, initialised with create react app (I'll initialise the next one myself, I swear!)
+created with React, initialised with create react app (but by god, I'm initialising the next one!)
 
 ## Available Scripts
 
