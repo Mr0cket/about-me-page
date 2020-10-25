@@ -9,7 +9,7 @@ Default Z-index (when not assigned) = 0
     My Z-index system: 
     10  -> Highest priority, 
      0  -> Default priority, 
-    -1  -> Underneath all other elements.
+    -1  -> Below all other elements.
  */
 
 html {
@@ -82,7 +82,6 @@ body {
 li>a, li>button {
   display: inline-block;
   margin: 10px;
-  padding: 5px, 5px;
   font-family: 'Roboto', sans-serif;
   text-align: left;
   color: #efeeed;
@@ -120,6 +119,7 @@ li>a, li>button {
   height: 400px;
   max-height: 100%;
   /* highest z-index when displayed.*/
+  /* Change z-index to modal-guts which represents the clickable area of modal -bad idea. */
   z-index: 10;
 }
 .modal.closed {
@@ -160,6 +160,27 @@ li>a, li>button {
  /* Enable Safari touch scrolling physics which is needed for scroll snap */
  -webkit-overflow-scrolling: touch;
 }
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+  /* width */
+  .gallery-scroller::-webkit-scrollbar {
+    width: 10px;
+  }
+  /* Track */
+  .gallery-scroller::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  /* Handle */
+  .gallery-scroller::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  /* Handle on hover */
+  .gallery-scroller::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+/* TODO: create semi-transparent prevPic and nextPic buttons to both sides of the gallery viewable area. */
+
 .gallery-scroller div {
   scroll-snap-align: center;
   min-width: 100%;
@@ -170,11 +191,11 @@ li>a, li>button {
 
 .life.pic {
   max-width: 80vw;
-  max-height: 65vh;
+  max-height: 55vh;
   border-radius: 10px;
 }
 .modal-overlay {
-  /* use 2nd highest z-index */
+  /* use 2nd highest z-index to position behind modal*/
   z-index: 9;
   position: fixed;
   top: 0;
@@ -270,6 +291,11 @@ li>a, li>button {
   max-height: 50%;
   overflow: hidden;
 }
+.section-bar ul {
+  padding-inline-start: 5px;
+  margin-block-start: 0.25em;
+  margin-block-end: 0.25em;
+}
 .close-button {
   background-color: transparent;
   border: none;
@@ -295,8 +321,4 @@ text-decoration: none;
     transform: rotate(360deg);
   }
 }
-.section-bar ul {
-  padding-inline-start: 5px;
-  margin-block-start: 0.25em;
-  margin-block-end: 0.25em;
-}
+

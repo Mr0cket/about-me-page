@@ -117,7 +117,7 @@ class WorkSection extends Section {
 }
 
 class LifeSection extends Section {
-
+/* TODO: create semi-transparent prevPic and nextPic buttons to both sides of the gallery viewable area. */
     render () {
         
         return (
@@ -128,6 +128,7 @@ class LifeSection extends Section {
                     <h1 className="section-headings">{this.sectionName}</h1>
                 </div>
                 <div className="bottom-content" style={{'padding': '0 2%'}}> 
+                
                  <div className="gallery" 
                     style={{    }}>
                     <div>
