@@ -8,6 +8,12 @@ import './style.css'
 import './mobile.css'
 import ModalForm from './assets/components/ModalForm';
 
+
+// App state is used to keep track of modal visibity state and to pass modal state between components.
+// TODO: rework so that App is the single point of truth for modal visibility state.
+// openModal() => toggleModal().
+// pass toggleModal to all Components that interact with modal visibility via props - CrazySideBar, ModalForm.
+// Then use getDerivedStateFromProps to update state after every call to toggleModal.
 class App extends React.Component {
   constructor() {
     super();

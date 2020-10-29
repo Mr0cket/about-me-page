@@ -12,7 +12,7 @@ class TotallyNormalSection extends React.Component {
         if (this.props.text === "Get in Touch!") { 
             return (
                 <li className="listless-list">
-                    <button  className="contactMe close-button" onClick={this.props.openModal}> 
+                    <button  className="contactMe link-button" onClick={this.props.openModal}> 
                         <FontAwesomeIcon icon={this.props.icon}/> 
                         <span className="optional-text">{this.props.text}</span></button>
                 </li>
