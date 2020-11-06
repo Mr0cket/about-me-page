@@ -23,8 +23,6 @@ class App extends React.Component {
     }
   }
   openModal() {
-    console.log('toggling modal') 
-
     this.setState({modalOpen: true})
 
   }

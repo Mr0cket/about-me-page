@@ -1,22 +1,22 @@
 import React from 'react';
-import audio from "../media/holy.wav";
+import audio from "../media/Holy.wav";
 import che from "../media/El-Che.jpg"
 import niseko from "../media/mt-niseko.jpg"
 import mind from "../media/open-your-mind.jpg"
 import snow from "../media/sit-in-snow.jpg"
 import rock from "../media/sit-on-rock.jpg"
 import tamdao from "../media/sit-on-sign.jpg"
+import applePen from '../media/I-HAVE-A-PEN.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGitkraken, faHtml5, faNodeJs, faReact } from '@fortawesome/free-brands-svg-icons';
-import { faCode, faHammer, faServer } from '@fortawesome/free-solid-svg-icons';
+import { faCode, faHammer, faServer, faTrain } from '@fortawesome/free-solid-svg-icons';
 function MainStuff() {
-    console.log(`main stuff rendered`)
 
     return (
         <main id="main-stuff-wrapper">
             <HomeSection/>
             <WorkSection 
-                name= "Work Stuff" 
+                name= "About me" 
                 blendStyle={{
                     background: "linear-gradient(to bottom, rgb(55 55 55), #164076)",
                     height: "5px",
@@ -24,7 +24,7 @@ function MainStuff() {
                 id= 'work'
                 />
             <LifeSection 
-                name="Photo Gallery"
+                name="Photos taken along the way"
                 id='life'
                 blendStyle={{
                     background: "linear-gradient(to bottom, #164076, rgb(32, 42, 54))",
@@ -34,8 +34,6 @@ function MainStuff() {
         </main>
     )
 }
-// for some reason, when I add > 3 sections, the navigation smooth-scrolling effect breaks... maybe that was a problem with a CSS overflow setting?
-// when transitioning '#home' <-> '#work' and '#contact'. No idea why... but 3 sections is scroll limit for now. (probably because of the #main-stuff height setting.)
 
 
 
@@ -98,15 +96,28 @@ class WorkSection extends Section {
                     </div>
                     <div className="bottom-content"> 
                         <div className="work right">
-                            <h3 className="work title">Experience</h3>
+                            <h3 className="work title"> Words I learned recently</h3>
                             <ul className="work list">
                                 <li><FontAwesomeIcon icon={faHtml5}/>  Front-End Languages (HTML, css, js)</li>
                                 <li><FontAwesomeIcon icon={faCode}/>  API calls</li>
-                                <li><FontAwesomeIcon icon={faServer}/>  Server stuff</li>  
+                                <li><FontAwesomeIcon icon={faServer}/> Server stuff </li>  
                                 <li><FontAwesomeIcon icon={faReact}/>  React.js </li>
-                                <li><FontAwesomeIcon icon={faNodeJs}/>  Node </li>
-                                <li><FontAwesomeIcon icon={faGitkraken}/>  Github</li>
-                                <li><FontAwesomeIcon icon={faHammer}/>  Building this webpage!</li>
+                                <li><FontAwesomeIcon icon={faNodeJs}/>  Node.js </li>
+                                <li> <FontAwesomeIcon icon={faTrain}/> Express.js </li>
+                                <li><FontAwesomeIcon icon={faGitkraken}/>  Github (not js)</li>
+                                <li><FontAwesomeIcon icon={faHammer}/> Building this webpage! </li>
+                            </ul>
+                        </div>
+                        <div className="work left">
+                            <h3 className="work title"> Random facts</h3>
+                            <ul className="work list">
+                                <li> <span role='img' aria-label='aus'>🦘</span> From Australia</li>
+                                <li> <span role='img' aria-label='heart'>❤️</span> Snowboarding, bike-riding {'&'} Netherlands!</li>
+                                <li> <span role='img' aria-label='teacher'>👨🏻‍🏫</span> Taught english in Vietnam </li>
+                                <li> <span role='img' aria-label='frownie-face'>😕</span> Graduated in Engineering, never used my degree </li>
+                                <li> <span role='img' aria-label='nerdy-face'>🤓</span> Am a bit of a geek </li>
+                                <li> <span role='img' aria-label='nerdy-face'>🤓</span> Prefer back-end to front-end</li>
+                                <li> <span role='img' aria-label='investigative-face'>🧐</span> Before deciding to learn to code, <span style={{fontSize: '0.5em'}}>I had a brief existential crisis about the meaning of my life!</span> </li>
                             </ul>
                         </div>
                     </div>
@@ -137,6 +148,7 @@ class LifeSection extends Section {
                         <MyPic src={niseko} alt="Snowy mountains!"/>
                         <MyPic src={snow} alt="I like snow!"/>
                         <MyPic src={mind} alt="Ice Scupture"/>
+                        <MyPic src={applePen} alt="I have a pen..."/>
                         <MyPic src={rock} alt="A view of HaLong Bay"/>
                         <MyPic src={tamdao} alt="A big sign for a small village"/>
                     </div>

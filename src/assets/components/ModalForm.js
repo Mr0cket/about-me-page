@@ -17,7 +17,6 @@ class ModalForm extends React.Component {
     // Also: rewrite logic of getDerivedStateFromProps to improve the state stuff.
     // Also: need to check whether this is the correct use case for getDerivedStateFromProps method.
     static getDerivedStateFromProps(props, state) {
-        console.log(`called getDerivedStateFromProps.`)
         
         if (!state.modalOpen && !state.propsChanged) {
             return {
@@ -35,12 +34,10 @@ class ModalForm extends React.Component {
     
 
     render() {
-        console.log('modal form was rendered')
 
         // use modalState to toggle 'closed' class when modalClosed == true.
         let modalState = this.state.modalOpen ? "" : "closed";
 
-        console.log(`current modalState: ${modalState}`)
         return (
             <div>
                 <div className={`modal ${modalState}`} id="modal" style={this.state.formStyle}>
@@ -48,14 +45,12 @@ class ModalForm extends React.Component {
                         <button 
                            className="link-button"
                             onClick={() => {
-                                console.log('changing modalOpen state')
                                 this.setState({modalOpen: false})}} 
                             href="">
                                 <FontAwesomeIcon icon={faTimes}/>
                         </button>
                         <ContactForm 
                             closeModal={() => {
-                                console.log('closeModal call from ContactForm submit()');
                                 this.setState({modalOpen: false})
                                 }
                             }
@@ -69,25 +64,15 @@ class ModalForm extends React.Component {
     }
 }
 
-    // Will think about this in the morning!
-    // Need to understand net::ERROR_CONNECTION_REFUSED .
-    // most likely: problem with how the server responds to the client 'post' request.
-    // Client may be expecting a specific response with a standard message and headers format.
 function ContactForm(props) {
 
-    //  [message: statefulVariable, setMsg: fn to update 'message' state.]
-    let [message, setMsg] = useState(""); // setMsg similar to this.setState in class components.
-    // useState : Returns a stateful value, and a function to update it.
+    let [message, setMsg] = useState(""); 
 
 
     const form = useRef(null); // null = initial reference (ref) value of form.
-    // useRef: returns a mutable ref object whose .current property is initialized to the passed argument (initialValue).
     
 
     const submit = function(e) {
-        console.log('a message was submitted!')
-        console.log(e)
-        console.log('initiating post request to local server...')
         // call data transfer method
         uploadData(e)
 
@@ -109,8 +94,6 @@ function ContactForm(props) {
             } 
         )
             .then(res => {
-                console.log(`we got a response!`)  
-                console.log(res)
                 })
                     .catch(reason => console.log(`there was a problem with request: ${reason}`))
     }

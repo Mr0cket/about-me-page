@@ -6,8 +6,6 @@ import { faBriefcase, faHandshake, faHome, faSnowboarding } from '@fortawesome/f
 
 class TotallyNormalSection extends React.Component {
 
-// very strange behaviour: whenever I click 'get in Touch' button, the page rerenders... 
-// Can't find where the event listener is though.
     render () {
         if (this.props.text === "Get in Touch!") { 
             return (
@@ -32,8 +30,8 @@ function CrazySideBar(props) {
         <nav className="section-bar">
             <ul>
                 <TotallyNormalSection text="Home" navLink="#home" icon={faHome}/>
-                <TotallyNormalSection text="Professional stuff" navLink="#work" icon={faBriefcase}/>
-                <TotallyNormalSection text="Life stuff" navLink="#life" icon={faSnowboarding}/> 
+                <TotallyNormalSection text="About Me" navLink="#work" icon={faBriefcase}/>
+                <TotallyNormalSection text="Photo Gallery" navLink="#life" icon={faSnowboarding}/> 
                 <TotallyNormalSection text="Get in Touch!"  icon={faHandshake} openModal={props.openModal} />
             </ul>
         </nav>

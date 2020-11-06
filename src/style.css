@@ -51,7 +51,7 @@ body {
 .react-logo {
   margin-top: 5px;
   height: 45px;
-  pointer-events: none;
+  pointer-events: none; 
 }
 .section-bar {
   display: flex;
@@ -71,14 +71,27 @@ body {
   padding: 0.25em;
   z-index: 1;
   border-radius: 1em;
-  background-color: dimgrey;
+  background-color: #385e90;
+  margin-right: 0.25em;
 }
+.work.left {
+  position: absolute;
+  left: 0;
+  width: 40%;
+  padding: 0.25em;
+  z-index: 1;
+  border-radius: 1em;
+  background-color: #385e90;
+  margin-left: 6em;
+}
+
 
 .listless-list {
   list-style-type: none;
   font-size: 0.8em;
   padding: 0.5em;
 }
+
 li>a, li>button {
   display: inline-block;
   margin: 10px;

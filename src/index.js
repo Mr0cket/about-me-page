@@ -34,7 +34,6 @@ let Audio = {
       let volIntervalId = setInterval(()=> {
         Audio.timeCount++;
         if (Audio.timeCount > 5) clearInterval(volIntervalId);
-        console.log(`volume: ${Audio.sound.volume}`);
       }, 5000)
   },
   // Pause object method messy as well
@@ -49,9 +48,9 @@ let Audio = {
 
 // User clicks on the page to indicate user interaction.
 window.onmousedown = () => (userInteracted === false) ? userInteracted = true : null;
-mainGuy.onmouseover = () => (userInteracted && !Audio.audioPlaying) ? Audio.play() : console.log('didnt work');
+mainGuy.onmouseover = () => (userInteracted && !Audio.audioPlaying) ? Audio.play() : null;
 mainGuy.onmouseleave = () => Audio.audioPlaying ? setTimeout(Audio.pause, 200) : null;
-mainGuy.addEventListener("focus", () => !Audio.audioPlaying ? Audio.play() : console.log("Audio Already playing"))
+mainGuy.addEventListener("focus", () => !Audio.audioPlaying ? Audio.play() : null)
 /* 
 mainGuy.addEventListener('touchstart', () => {
   if (!Audio.audioPlaying) {

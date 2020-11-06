@@ -7,7 +7,13 @@
     }
     .work.right {
       position: static;
-      margin: 0 auto;
+      margin: 2vh auto;
+      width: 80%
+    }
+    .work.left {
+      position: static;
+      margin: 2vh auto;
+      width: 80%
     }
     .listless-list {
       font-size: 1.5em;
@@ -24,6 +30,10 @@
     }
     .work.right {
       position: absolute;
-
+      width: 40%;
+    }
+    .work.left {
+      position: absolute;
+      width: 40%;
     }
   }
