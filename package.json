@@ -19,7 +19,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "publish": "npm run build && git checkout production && git commit -am 'updated prod. build' && git fetch"
   },
   "eslintConfig": {
     "extends": "react-app"

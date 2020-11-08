@@ -94,15 +94,14 @@ class WorkSection extends Section {
                         <h1 className="section-headings">{this.sectionName}</h1>
                     </div>
                     <div className="bottom-content"> 
-
                         <div className="work right">
                             <h3 className="work title"> Some facts about me</h3>
                             <ul className="work list">
                                 <li> <span role='img' aria-label='aus'>🦘</span> From Australia</li>
                                 <li> <span role='img' aria-label='heart'>❤️</span> Snowboarding, bike-riding, travelling, learning, gaming {'&'} Netherlands!</li>
                                 <li> <span role='img' aria-label='teacher'>👨🏻‍🏫</span> Taught english in Vietnam {'&'} France </li>
-                                <li> <span role='img' aria-label='apple'>🍎</span>  I am using a mac for this course </li>
-                                <li> <span role='img' aria-label='shrug'>🤷🏼‍♂️</span> I am a perfectionist, and also terrible at styling - I can spend half day deciding how a button should look... Only to realise it's beter not to have the button at all </li>
+                                <li> <span role='img' aria-label='apple'>🍎</span>  I am using macOS for this course </li>
+                                <li> <span role='img' aria-label='shrug'>🤷🏼‍♂️</span> I am a lazy perfectionist, and also terrible at styling - I can spend half day deciding how a button should look... Only to realise it's beter not to have the button at all </li>
                             </ul>
                         </div>
                     </div>
