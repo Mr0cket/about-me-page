@@ -101,7 +101,8 @@ class WorkSection extends Section {
                                 <li> <span role='img' aria-label='aus'>🦘</span> From Australia</li>
                                 <li> <span role='img' aria-label='heart'>❤️</span> Snowboarding, bike-riding, travelling, learning, gaming {'&'} Netherlands!</li>
                                 <li> <span role='img' aria-label='teacher'>👨🏻‍🏫</span> Taught english in Vietnam {'&'} France </li>
-                                <li> <span role='img' aria-label='dunno'>🍎</span>  I am using a mac for this course </li>
+                                <li> <span role='img' aria-label='apple'>🍎</span>  I am using a mac for this course </li>
+                                <li> <span role='img' aria-label='shrug'>🤷🏼‍♂️</span> I am a perfectionist, and also terrible at styling - I can spend half day deciding how a button should look... Only to realise it's beter not to have the button at all </li>
                             </ul>
                         </div>
                     </div>
@@ -124,8 +125,7 @@ class LifeSection extends Section {
                 </div>
                 <div className="bottom-content" style={{'padding': '0 2%'}}> 
                 
-                 <div className="gallery" 
-                    style={{    }}>
+                 <div className="gallery">
                     <div>
                     <div className="gallery-scroller">
                         <MyPic src={che} alt="Revolutionary Leader (PlaceholderPic)"/>   
@@ -135,7 +135,7 @@ class LifeSection extends Section {
                         <MyPic src={applePen} alt="I have a pen... - Sapporo, Japan"/>
                         <MyPic src={passion} alt="Businessman enjoys a quality pint - Sapporo, Japan"/>
                         <MyPic src={rock} alt="View of HaLong Bay, Vietnam"/>
-                        <myPic src={bay} alt="another view of HaLong Bay, Vietnam"/>
+                        <myPic src={bay} alt="Another view of HaLong Bay, Vietnam"/>
                         <MyPic src={tamdao} alt="Small village with a big sign - Tamdao, Vietnam"/>
                     </div>
                       
