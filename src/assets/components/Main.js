@@ -133,10 +133,10 @@ class LifeSection extends Section {
                         <MyPic src={snow} alt="I like snow! - Niseko, Japan"/>
                         <MyPic src={mind} alt="Ice Scupture - Sapporo, Japan"/>
                         <MyPic src={applePen} alt="I have a pen... - Sapporo, Japan"/>
-                        <MyPic src={passion} alt="A person enjoying a quality pint - Sapporo, Japan"/>
+                        <MyPic src={passion} alt="Businessman enjoys a quality pint - Sapporo, Japan"/>
                         <MyPic src={rock} alt="View of HaLong Bay, Vietnam"/>
                         <myPic src={bay} alt="another view of HaLong Bay, Vietnam"/>
-                        <MyPic src={tamdao} alt="A small village with a big sign - Tamdao, Vietnam"/>
+                        <MyPic src={tamdao} alt="Small village with a big sign - Tamdao, Vietnam"/>
                     </div>
                       
                     </div>
