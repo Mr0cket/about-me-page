@@ -7,9 +7,8 @@ import snow from "../media/sit-in-snow.jpg"
 import rock from "../media/sit-on-rock.jpg"
 import tamdao from "../media/sit-on-sign.jpg"
 import applePen from '../media/I-HAVE-A-PEN.jpg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGitkraken, faHtml5, faNodeJs, faReact } from '@fortawesome/free-brands-svg-icons';
-import { faCode, faHammer, faServer, faTrain } from '@fortawesome/free-solid-svg-icons';
+import bay from "../media/ha-long-bay.jpeg"
+import passion from "../media/passion.jpg"
 function MainStuff() {
 
     return (
@@ -24,7 +23,7 @@ function MainStuff() {
                 id= 'work'
                 />
             <LifeSection 
-                name="Photos taken along the way"
+                name="Some 'cool' Photos"
                 id='life'
                 blendStyle={{
                     background: "linear-gradient(to bottom, #164076, rgb(32, 42, 54))",
@@ -95,29 +94,14 @@ class WorkSection extends Section {
                         <h1 className="section-headings">{this.sectionName}</h1>
                     </div>
                     <div className="bottom-content"> 
+
                         <div className="work right">
-                            <h3 className="work title"> Words I learned recently</h3>
-                            <ul className="work list">
-                                <li><FontAwesomeIcon icon={faHtml5}/>  Front-End Languages (HTML, css, js)</li>
-                                <li><FontAwesomeIcon icon={faCode}/>  API calls</li>
-                                <li><FontAwesomeIcon icon={faServer}/> Server stuff </li>  
-                                <li><FontAwesomeIcon icon={faReact}/>  React.js </li>
-                                <li><FontAwesomeIcon icon={faNodeJs}/>  Node.js </li>
-                                <li> <FontAwesomeIcon icon={faTrain}/> Express.js </li>
-                                <li><FontAwesomeIcon icon={faGitkraken}/>  Github (not js)</li>
-                                <li><FontAwesomeIcon icon={faHammer}/> Building this webpage! </li>
-                            </ul>
-                        </div>
-                        <div className="work left">
-                            <h3 className="work title"> Random facts</h3>
+                            <h3 className="work title"> Some facts about me</h3>
                             <ul className="work list">
                                 <li> <span role='img' aria-label='aus'>🦘</span> From Australia</li>
-                                <li> <span role='img' aria-label='heart'>❤️</span> Snowboarding, bike-riding {'&'} Netherlands!</li>
-                                <li> <span role='img' aria-label='teacher'>👨🏻‍🏫</span> Taught english in Vietnam </li>
-                                <li> <span role='img' aria-label='frownie-face'>😕</span> Graduated in Engineering, never used my degree </li>
-                                <li> <span role='img' aria-label='nerdy-face'>🤓</span> Am a bit of a geek </li>
-                                <li> <span role='img' aria-label='nerdy-face'>🤓</span> Prefer back-end to front-end</li>
-                                <li> <span role='img' aria-label='investigative-face'>🧐</span> Before deciding to learn to code, <span style={{fontSize: '0.5em'}}>I had a brief existential crisis about the meaning of my life!</span> </li>
+                                <li> <span role='img' aria-label='heart'>❤️</span> Snowboarding, bike-riding, travelling, learning, gaming {'&'} Netherlands!</li>
+                                <li> <span role='img' aria-label='teacher'>👨🏻‍🏫</span> Taught english in Vietnam {'&'} France </li>
+                                <li> <span role='img' aria-label='dunno'>🍎</span>  I am using a mac for this course </li>
                             </ul>
                         </div>
                     </div>
@@ -144,13 +128,15 @@ class LifeSection extends Section {
                     style={{    }}>
                     <div>
                     <div className="gallery-scroller">
-                        <MyPic src={che} alt="Revolutionary Leader"/>   
-                        <MyPic src={niseko} alt="Snowy mountains!"/>
-                        <MyPic src={snow} alt="I like snow!"/>
-                        <MyPic src={mind} alt="Ice Scupture"/>
-                        <MyPic src={applePen} alt="I have a pen..."/>
-                        <MyPic src={rock} alt="A view of HaLong Bay"/>
-                        <MyPic src={tamdao} alt="A big sign for a small village"/>
+                        <MyPic src={che} alt="Revolutionary Leader (PlaceholderPic)"/>   
+                        <MyPic src={niseko} alt="Snowy mountains! - Niseko, Japan"/>
+                        <MyPic src={snow} alt="I like snow! - Niseko, Japan"/>
+                        <MyPic src={mind} alt="Ice Scupture - Sapporo, Japan"/>
+                        <MyPic src={applePen} alt="I have a pen... - Sapporo, Japan"/>
+                        <MyPic src={passion} alt="A person enjoying a quality pint - Sapporo, Japan"/>
+                        <MyPic src={rock} alt="View of HaLong Bay, Vietnam"/>
+                        <myPic src={bay} alt="another view of HaLong Bay, Vietnam"/>
+                        <MyPic src={tamdao} alt="A small village with a big sign - Tamdao, Vietnam"/>
                     </div>
                       
                     </div>
@@ -167,6 +153,7 @@ class MyPic extends React.Component {
         return (
             <div>
                 <img className='life pic' src={this.props.src} alt={this.props.alt}/> 
+                <p>{this.props.alt}</p>
             </div>
         )
     }
