@@ -9,6 +9,7 @@ import tamdao from "../media/sit-on-sign.jpg"
 import applePen from '../media/I-HAVE-A-PEN.jpg'
 import bay from "../media/ha-long-bay.jpeg"
 import passion from "../media/passion.jpg"
+import CommentsSection from './CommentsSection'
 function MainStuff() {
 
     return (
@@ -30,6 +31,7 @@ function MainStuff() {
                     height: "5px",
                 }}
             />
+            <CommentsSection/>
         </main>
     )
 }
@@ -142,7 +144,7 @@ class LifeSection extends Section {
                         <MyPic src={applePen} alt="I have a pen... - Sapporo, Japan"/>
                         <MyPic src={passion} alt="Businessman enjoys a quality pint - Sapporo, Japan"/>
                         <MyPic src={rock} alt="View of HaLong Bay, Vietnam"/>
-                        <myPic src={bay} alt="Another view of HaLong Bay, Vietnam"/>
+                        <MyPic src={bay} alt="Another view of HaLong Bay, Vietnam"/>
                         <MyPic src={tamdao} alt="Small village with a big sign - Tamdao, Vietnam"/>
                     </div>
                       

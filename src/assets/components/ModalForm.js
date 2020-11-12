@@ -85,12 +85,9 @@ function ContactForm(props) {
         // The form data is sent using the FormData constructor.
         // data : FormData object.
         let data = new FormData(form.current)
-        fetch('http://localhost:666/', { 
+        fetch('http://192.168.1.2:666/contacts', { 
             method: 'POST', 
             body: data,
-             headers: new Headers({
-                'content-type': 'multipart/form-data'
-            })
             } 
         )
             .then(res => {
@@ -100,11 +97,10 @@ function ContactForm(props) {
 
     return (
         <form ref={form} className="contact-form" onSubmit={submit}>
-            
             <input 
                 type="text"
                 id="name"
-                name="message[name]"
+                name="name"
                 value={message.name}
                 placeholder="Name"
                 onChange={e => setMsg({ ...message, name: e.target.value })} />
@@ -112,12 +108,12 @@ function ContactForm(props) {
             <input 
                 type="email"
                 id="email"
-                name="message[email]"
+                name="email"
                 value={message.email}
                 placeholder="email"
                 onChange={e => setMsg({ ...message, email: e.target.value })}/><br />
             <textarea                                      
-                    name="message[content]"
+                    name="message"
                     placeholder="Collab Bro...?"
                     value={message.content}
                     onChange={e => setMsg({ ...message, content: e.target.value })}

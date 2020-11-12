@@ -28,7 +28,6 @@ body {
 }
 
 .App {
-  height: 300vh;
   overflow: hidden;
   background-color: rgb(55 55 55);
 }
@@ -92,7 +91,7 @@ body {
   padding: 0.5em;
 }
 
-li>a, li>button {
+li>a, li>button, .comment>a {
   display: inline-block;
   margin: 10px;
   font-family: 'Roboto', sans-serif;
@@ -100,7 +99,14 @@ li>a, li>button {
   color: #efeeed;
   text-decoration: none;
 }
-
+.comment>a {
+  display: inline;
+}
+.comment {
+  border-radius: 10px;
+  background-color: #385e90;
+  margin: 2em 5em 0;
+}
 #main-stuff-wrapper {
   text-align: center;
 }
@@ -327,4 +333,3 @@ text-decoration: none;
     transform: rotate(360deg);
   }
 }
-
