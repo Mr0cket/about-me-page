@@ -85,7 +85,7 @@ function ContactForm(props) {
         // The form data is sent using the FormData constructor.
         // data : FormData object.
         let data = new FormData(form.current)
-        fetch('http://192.168.1.2:666/contacts', { 
+        fetch('http://homesterdam.ydns.eu:666/contacts', { 
             method: 'POST', 
             body: data,
             } 

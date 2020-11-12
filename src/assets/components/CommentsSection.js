@@ -8,7 +8,7 @@ function CommentsSection() {
   const [isLoaded, setIsLoaded] = useState(false)
   const [commentList, setCommentList] = useState([])
   const getComments = async () => {
-    const apiUrl = 'http://192.168.1.2:666/contacts'
+    const apiUrl = 'http://homesterdam.ydns.eu:666/contacts'
 
     const rawData = await fetch(apiUrl)
     const comments = await rawData.json()
