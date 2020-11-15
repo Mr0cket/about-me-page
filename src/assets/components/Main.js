@@ -14,7 +14,7 @@ function MainStuff() {
 
     return (
         <main id="main-stuff-wrapper">
-            <HomeSection/>
+            <HomeSection />
             <WorkSection 
                 name= "About me" 
                 blendStyle={{

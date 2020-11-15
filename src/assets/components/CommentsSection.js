@@ -2,14 +2,13 @@ import React, {useEffect, useState} from 'react'
 import _ from 'lodash'
 import Comment from './Comment'
 // create a View to display all Comments posted with form.
+const apiUrl = 'http://172.105.93.205/contacts'
 
 function CommentsSection() {
   const [comments, setComments] = useState([])
   const [isLoaded, setIsLoaded] = useState(false)
   const [commentList, setCommentList] = useState([])
   const getComments = async () => {
-    const apiUrl = 'http://homesterdam.ydns.eu:666/contacts'
-
     const rawData = await fetch(apiUrl)
     const comments = await rawData.json()
     setComments(await comments);

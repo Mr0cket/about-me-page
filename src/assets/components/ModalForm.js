@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+const apiUrl = 'http://172.105.93.205/contacts/'
 
 class ModalForm extends React.Component {
     constructor(props) {
@@ -85,7 +86,7 @@ function ContactForm(props) {
         // The form data is sent using the FormData constructor.
         // data : FormData object.
         let data = new FormData(form.current)
-        fetch('http://homesterdam.ydns.eu:666/contacts', { 
+        fetch(apiUrl, { 
             method: 'POST', 
             body: data,
             } 
