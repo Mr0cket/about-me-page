@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-const apiUrl = 'http://172.105.93.205/contacts/'
+const apiUrl = 'https://contactforms-api.herokuapp.com/contacts/'
 
 class ModalForm extends React.Component {
     constructor(props) {

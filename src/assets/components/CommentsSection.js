@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import _ from 'lodash'
 import Comment from './Comment'
 // create a View to display all Comments posted with form.
-const apiUrl = 'http://172.105.93.205/contacts'
+const apiUrl = 'https://contactforms-api.herokuapp.com/contacts'
 
 function CommentsSection() {
   const [comments, setComments] = useState([])
