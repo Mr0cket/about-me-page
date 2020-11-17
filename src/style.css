@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
 /* Need a system for assigning z-index 
 (Determines the order that elements which overlap eachother are displayed on the page )*/
@@ -28,7 +28,6 @@ body {
 }
 
 .App {
-  overflow: hidden;
   background-color: rgb(55 55 55);
 }
 .top-content {
@@ -50,7 +49,7 @@ body {
 .react-logo {
   margin-top: 5px;
   height: 45px;
-  pointer-events: none; 
+  pointer-events: none;
 }
 .section-bar {
   display: flex;
@@ -84,22 +83,23 @@ body {
   margin-left: 6em;
 }
 
-
 .listless-list {
   list-style-type: none;
   font-size: 0.8em;
   padding: 0.5em;
 }
 
-li>a, li>button, .comment>a {
+li > a,
+li > button,
+.comment > a {
   display: inline-block;
   margin: 10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   text-align: left;
   color: #efeeed;
   text-decoration: none;
 }
-.comment>a {
+.comment > a {
   display: inline;
 }
 .comment {
@@ -115,10 +115,9 @@ li>a, li>button, .comment>a {
   background: rgb(22, 64, 118);
 }
 #life {
-/*   background: #f2b635;*/
+  /*   background: #f2b635;*/
   background: rgb(32, 42, 54);
 }
-
 
 .modal {
   display: flex;
@@ -135,10 +134,9 @@ li>a, li>button, .comment>a {
   z-index: 10;
 }
 .modal.closed {
- display: none;
+  display: none;
 }
 .modal-guts {
-  
   width: 100%;
   height: 90%;
   /* spacing around the edges of the modal box */
@@ -146,8 +144,6 @@ li>a, li>button, .comment>a {
   margin: 1%;
   /* let it scroll if message overflows the screen. */
 }
-
-
 
 /* Photo Gallery Styling */
 
@@ -159,20 +155,20 @@ li>a, li>button, .comment>a {
 
 .gallery-scroller {
   /* snap mandatory on horizontal axis  */
- scroll-snap-type: x mandatory;
- 
- overflow-x: scroll;
- overflow-y: hidden;
+  scroll-snap-type: x mandatory;
 
- display: flex;
- align-items: center;
+  overflow-x: scroll;
+  overflow-y: hidden;
 
- height: 65vh;
- 
- /* Enable Safari touch scrolling physics which is needed for scroll snap */
- -webkit-overflow-scrolling: touch;
+  display: flex;
+  align-items: center;
+
+  height: 65vh;
+
+  /* Enable Safari touch scrolling physics which is needed for scroll snap */
+  -webkit-overflow-scrolling: touch;
 }
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
   /* width */
   .gallery-scroller::-webkit-scrollbar {
     width: 10px;
@@ -225,13 +221,12 @@ li>a, li>button, .comment>a {
   height: 70%;
 }
 
-
 .social-links {
   display: inline;
   color: #efeeed;
 }
 .section-headings {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.2em; /* 24px */
   margin: 0px;
   text-align: left;
@@ -240,7 +235,7 @@ li>a, li>button, .comment>a {
   font-size: 1.5em;
 }
 .work.title {
-    display: block;
+  display: block;
   font-size: 1em;
   text-align: center;
 }
@@ -253,7 +248,7 @@ li>a, li>button, .comment>a {
   position: relative;
   left: -15%;
   color: #efeeed;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   display: flex;
   width: max-content;
   flex-direction: column;
@@ -261,11 +256,10 @@ li>a, li>button, .comment>a {
   margin: 2% auto;
 }
 
-
 #funky-footer {
   position: fixed;
   bottom: 1%;
-  left: 45%
+  left: 45%;
 }
 
 .normal-header {
@@ -290,15 +284,16 @@ li>a, li>button, .comment>a {
   border-radius: 10px;
   overflow: hidden;
 }
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
   margin: 5px 10px;
   border-radius: 5px;
   border: hidden;
 }
 .contact-form textarea {
-  display: block;  
+  display: block;
   margin: 0 auto;
-  width: 100%; 
+  width: 100%;
   height: 100%;
   max-height: 50%;
   overflow: hidden;
@@ -316,7 +311,7 @@ li>a, li>button, .comment>a {
 
 .link-button:hover,
 .link-button:focus {
-text-decoration: none;
+  text-decoration: none;
 }
 
 /* default styles below */
